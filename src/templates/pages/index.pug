@@ -1,0 +1,23 @@
+extends ../template
+block wrapper
+    .wrapper
+        .greeting
+            .greeting__autoriz-btn
+                a.greeting__autoriz-link(href="#")
+            .greting__autoriz-block--font.autoriz-block
+                .autoriz-block-photo-block
+                    img.autoriz-block-photo(src="styles/images/myPhoto.jpg", alt="myPhoto")
+                .autoriz-block-name-block
+                    span.autoriz-block-name Иван Исаков
+                    span.autoriz-block-personal Личный сайт веб разработчика
+                .socials
+                    a.socials__link(href="https://vk.com/tvopor" target="_blank" title="моя страница вконтакте")
+                        svg.my-class
+                            use(xlink:href="styles/images/icons/svg/sprite.svg#vk")
+                    a.socials__link(href="https://github.com/Iwasherd" target="_blank" title="github")
+                    a.socials__link(href="#" target="_blank" title="") 
+            .greting__autoriz-block--back.autoriz-block
+
+    
+
+

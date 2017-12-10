@@ -1,0 +1,224 @@
+.wrapper{
+    width: 100%;
+
+}
+.header{
+    background-color: #023975;
+    height: rem(200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    @include tablets{
+        height: 81px;
+    }
+    
+    
+}
+.header__title{
+    text-transform: uppercase;
+    font-size: rem(48px);
+    color: #ffff;
+    margin-bottom: 10px;
+    margin-left: 0rem;
+    font-weight: normal;
+        @include tablets{
+            font-size: 1.375rem;
+            margin-bottom: 0; 
+            letter-spacing: 1.3px;
+            margin-left: 15px;
+        }
+    
+    
+    
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: rem(800px);
+    @include tablets{
+            flex-direction: column-reverse;
+            height: auto;
+
+    }
+}
+.sidebar{
+    background-color: #00a5c8;
+    width: 25.6%;
+    @include tablets{
+            
+        width: 100%;
+        height: 304px;
+
+    }
+
+}
+.sidebar-right{
+    @include tablets{
+            height: 49px;
+
+    }
+}
+
+.sidebar__nav{
+        margin-top: 4.3rem;
+   margin-left: 15%;
+    color: #ffff;
+     @include tablets{
+            margin-top: 3rem;
+            margin-left: 6%;
+
+    }
+}
+.sidebar__title{
+        margin-bottom: 5px;
+        @include tablets{
+            margin-bottom: 3px;
+            font-size: 18px;
+
+    }
+}
+.sidebar__list{
+    margin-left: 2rem;
+    margin-bottom: 2.3rem;
+     
+}
+.sidebar__item{
+        margin-bottom: 5px;
+         @include tablets{
+            font-size: 18px;
+
+    }
+}
+.sidebar__link{
+    text-decoration: none;
+    color: #ffff;
+    &:hover{
+        color: #000;
+        transition: .7s;        
+    }
+     @include tablets{
+        font-size: 18px;
+
+    }
+
+
+}
+.sidebar__contacts{
+    display: flex;
+    flex-direction: column;
+     
+}
+
+.sidebar__contacts-phone{
+     text-decoration: none;
+    color: #ffff;
+    margin-bottom: 5px;
+    &:hover{
+        color: #000;
+        transition: .7s;
+    }
+     @include tablets{
+                
+        font-size: 18px;
+
+    }
+
+}
+.sidebar__contacts-socials{
+    color: #ffff;
+    
+    &:hover{
+        color: #000;
+        transition: .7s;
+    }
+     @include tablets{
+                
+    font-size: 18px;
+
+    }
+
+
+}
+
+.main{
+    width: 50.8%;
+     @include tablets{
+            height: 555px;
+             width: 100%;
+
+    }
+}
+.main__title{
+        text-align: center;
+    margin-top: 4.2rem;
+    font-size: 36px;
+    margin-bottom: 2.17rem;
+     @include tablets{
+                
+        margin-top: 2.9rem;
+        font-size: 24px;
+        margin-bottom: 1.4rem;
+
+    }
+}
+.main__content{
+    margin-left: 1.6rem;
+    line-height: 1.55rem;
+    margin-bottom: 1.8rem;
+    margin-right: 10px;
+     @include tablets{
+        margin-left: 26px;
+    line-height: 26px;
+    margin-bottom: 26px;
+    letter-spacing: 0.3px;
+    margin-right: 15px;
+    text-align: center;
+    font-size: 14px
+    
+
+    }
+}
+
+footer{
+     background-color: #023975;
+    height: rem(200px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    color: #ffff;
+     @include tablets{
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 116px;
+    }
+    
+
+}
+.footer__left{
+    margin-bottom: 46px;
+    margin-left: 3rem;
+    font-size: 16px;
+    @include tablets{
+        margin-top: 12px;
+        margin-bottom: 17px;
+        margin-left: 17px;
+   
+    }
+
+}
+.footer__right{
+        margin-bottom: 46px;
+    font-size: 16px;
+    margin-right: 2.3rem;
+    @include tablets{
+        font-size: 16px;
+        margin-left: 65px;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+
+}
