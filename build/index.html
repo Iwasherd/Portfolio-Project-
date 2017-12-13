@@ -9,16 +9,79 @@
   <body>
     <div class="wrapper">
       <div class="greeting">
-        <div class="greeting__autoriz-btn"><a class="greeting__autoriz-link" href="#"></a></div>
-        <div class="greting__autoriz-block--font autoriz-block">
-          <div class="autoriz-block-photo-block"><img class="autoriz-block-photo" src="styles/images/myPhoto.jpg" alt="myPhoto"></div>
+        <div class="greeting__autoriz-btn"><a class="greeting__autoriz-link" href="#">Авторизоваться</a></div>
+        <div class="greting__autoriz-block autoriz-block greting__autoriz-block--back">
+          <div class="autoriz-block-photo-block circle-photo__block" style="background-image:url(styles/images/myPhoto.jpg);"><img class="circle-photo__photo visuallyhidden" src="styles/images/myPhoto.jpg" alt="myPhoto"></div>
           <div class="autoriz-block-name-block"><span class="autoriz-block-name">Иван Исаков</span><span class="autoriz-block-personal">Личный сайт веб разработчика</span></div>
           <div class="socials"><a class="socials__link" href="https://vk.com/tvopor" target="_blank" title="моя страница вконтакте">
-              <svg class="my-class">
-                <use xlink:href="styles/images/icons/svg/sprite.svg#vk"></use>
-              </svg></a><a class="socials__link" href="https://github.com/Iwasherd" target="_blank" title="github"></a><a class="socials__link" href="#" target="_blank" title=""> </a></div>
+                          <svg class="icon icon-icon-vk">
+                            <use xlink:href="styles/images/icons/sprite.svg#icon-vk"></use>
+                          </svg></a><a class="socials__link" href="https://github.com/Iwasherd" target="_blank" title="github">
+                          <svg class="icon icon-icon-github">
+                            <use xlink:href="styles/images/icons/sprite.svg#icon-github"></use>
+                          </svg></a><a class="socials__link" href="#" target="_blank" title=""> 
+                          <svg class="icon icon-icon-in">
+                            <use xlink:href="styles/images/icons/sprite.svg#icon-in"></use>
+                          </svg></a>
+          </div>
+          <div class="autoriz-block__btns block__btns">
+            <ul class="block__btns-list">
+              <li class="block__btns-item"><a class="block__btns-link" href="my-works.html">Мои работы </a></li>
+              <li class="block__btns-item"><a class="block__btns-link" href="about.html">Обо мне</a></li>
+              <li class="block__btns-item"><a class="block__btns-link" href="blog.html">Блог </a></li>
+            </ul>
+          </div><span class="autoriz-block__back-title">Авторизуйтесь</span>
+          <form class="form" action="">
+            <div class="form-block">
+              <div class="form-block__row">
+                <label class="form-block__label" for="login">
+                  <div class="form-block__form-icon">
+                                <svg class="icon icon-icon-login">
+                                  <use xlink:href="styles/images/icons/sprite.svg#icon-login"></use>
+                                </svg>
+                  </div>
+                  <input class="form-block__input" type="text" name="login" placeholder="Логин" id="login">
+                </label>
+                <label class="form-block__label" for="password">
+                  <div class="form-block__form-icon">
+                                <svg class="icon icon-icon-password">
+                                  <use xlink:href="styles/images/icons/sprite.svg#icon-password"></use>
+                                </svg>
+                  </div>
+                  <input class="form-block__input" type="password" name="password" placeholder="Пароль" id="password">
+                </label>
+              </div>
+              <div class="form-block__row">   
+                <label class="form-block__label-checkbox" for="checkboxHuman">
+                  <div class="form-block__form-checkbox-name">Я человек</div>
+                  <input class="form-block__form-checkbox" type="checkbox" name="checkboxRobot" id="checkboxHuman">
+                  <div class="form-block__form-checkbox-fake"></div>
+                </label>
+              </div>
+              <div class="form-block__row"><span class="form-block__form-radio-title">Вы точно не робот?</span>
+                <div class="form-block__radio">
+                  <label class="form-block__label-radio" for="radioYes">
+                    <div class="form-block__form-radio-name">Да </div>
+                    <input class="form-block__form-radio" type="radio" name="robot" id="radioYes">
+                    <div class="form-block__form-radio-fake">           </div>
+                  </label>
+                  <label class="form-block__label-radio" for="radioNot">
+                    <div class="form-block__form-radio-name">Не уверен</div>
+                    <input class="form-block__form-radio" type="radio" name="robot" id="radioNot">
+                    <div class="form-block__form-radio-fake"></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="autoriz-block__back-btns block__btns">
+            <ul class="block__btns-list">
+              <li class="block__btns-item"><a class="block__btns-link" href="#">На главную </a></li>
+              <li class="block__btns-item"><a class="block__btns-link" href="#">Войти</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="greting__autoriz-block--back autoriz-block"></div>
+        <div class="greeting__copyright"><span class="greeting__copyright-name">&copy; Иван Исаков</span><span class="greeting__copyright-make">Создано с любовью в LoftSchool</span><span class="greeting__copyright-year">2017</span></div>
       </div>
     </div>
   </body>

@@ -1,1 +1,11 @@
 @import "normalize";
+
+@import "common/variables";
+
+@import "common/fonts";
+//common
+@import "common/main";
+@import "common/index";
+
+//blocks
+@import "common/blocks/form";

@@ -3,20 +3,45 @@ block wrapper
     .wrapper
         .greeting
             .greeting__autoriz-btn
-                a.greeting__autoriz-link(href="#")
-            .greting__autoriz-block--font.autoriz-block
-                .autoriz-block-photo-block
-                    img.autoriz-block-photo(src="styles/images/myPhoto.jpg", alt="myPhoto")
+                a.greeting__autoriz-link(href="#") Авторизоваться
+            .greting__autoriz-block.autoriz-block.greting__autoriz-block--back
+                div(style='background-image:url(styles/images/myPhoto.jpg)').autoriz-block-photo-block.circle-photo__block
+                    img.circle-photo__photo(src="styles/images/myPhoto.jpg", alt="myPhoto").visuallyhidden
                 .autoriz-block-name-block
                     span.autoriz-block-name Иван Исаков
                     span.autoriz-block-personal Личный сайт веб разработчика
                 .socials
+                    include layouts/mixins
                     a.socials__link(href="https://vk.com/tvopor" target="_blank" title="моя страница вконтакте")
-                        svg.my-class
-                            use(xlink:href="styles/images/icons/svg/sprite.svg#vk")
+                        +icon("icon-vk")         
                     a.socials__link(href="https://github.com/Iwasherd" target="_blank" title="github")
+                        +icon("icon-github")
                     a.socials__link(href="#" target="_blank" title="") 
-            .greting__autoriz-block--back.autoriz-block
+                        +icon("icon-in")
+                .autoriz-block__btns.block__btns
+                    ul.block__btns-list
+                        li.block__btns-item
+                            a.block__btns-link(href="my-works.html") Мои работы 
+                        li.block__btns-item
+                            a.block__btns-link(href="about.html") Обо мне
+                        li.block__btns-item
+                            a.block__btns-link(href="blog.html") Блог 
+
+                span.autoriz-block__back-title Авторизуйтесь
+                include layouts/form
+                .autoriz-block__back-btns.block__btns
+                    ul.block__btns-list
+                        li.block__btns-item
+                          a.block__btns-link(href="#") На главную 
+                        li.block__btns-item
+                            a.block__btns-link(href="#") Войти
+
+            .greeting__copyright
+                span.greeting__copyright-name &copy; Иван Исаков
+                span.greeting__copyright-make Создано с любовью в LoftSchool
+                span.greeting__copyright-year 2017
+
+
 
     
 

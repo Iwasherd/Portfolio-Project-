@@ -1,0 +1,28 @@
+form.form(action="")
+    .form-block
+        .form-block__row
+            label.form-block__label(for="login")
+                .form-block__form-icon
+                    +icon("icon-login")
+                input.form-block__input(type="text" name="login" placeholder="Логин")#login
+            label.form-block__label(for="password")
+                .form-block__form-icon
+                    +icon("icon-password")
+                input.form-block__input(type="password" name="password" placeholder="Пароль")#password
+        .form-block__row    
+            label.form-block__label-checkbox(for="checkboxHuman")
+                .form-block__form-checkbox-name Я человек
+                input.form-block__form-checkbox(type="checkbox" name="checkboxRobot")#checkboxHuman
+                .form-block__form-checkbox-fake
+        .form-block__row
+            span.form-block__form-radio-title Вы точно не робот?
+            .form-block__radio
+                label.form-block__label-radio(for="radioYes")
+                    .form-block__form-radio-name Да 
+                    input.form-block__form-radio(type="radio" name="robot")#radioYes
+                    .form-block__form-radio-fake            
+                label.form-block__label-radio(for="radioNot")
+                    .form-block__form-radio-name Не уверен
+                    input.form-block__form-radio(type="radio" name="robot")#radioNot
+                    .form-block__form-radio-fake
+                
