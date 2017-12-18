@@ -1,8 +1,9 @@
 //color
 $lightGreen: #00bfa5;
 $green: #009688;
-$grey: #455a64;
+$gray: #455a64;
 $black: #373e42;
+$white: #ffffff;
 
 
 //fonts
@@ -20,3 +21,86 @@ $roLIt: 'robotolight_italic';
 $roM: 'robotomedium';
 $roMIt: 'robotomedium_italic';
 $roR: 'robotoregular';
+
+
+@keyframes menu-odd{
+    0%{
+        transform:translate3d(-2000%, 0, 0);
+    }
+    100%{
+        transform:translate3d(0, 0, 0);
+    }
+}
+@keyframes menu-even{
+     0%{
+        transform:translate3d(2000%, 0, 0);
+    }
+    100%{
+        transform:translate3d(0, 0, 0);
+    }
+}
+@keyframes bounceIn-odd {
+  from, 20%, 40%, 60%, 80%, to {
+    animation-timing-function: cubic-bezier(8.000, 2.000, 2.000, 1.000);
+  }
+
+  from {
+    transform:translate3d(-2000%, 0, 0);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    transform: scale3d(1.03, 1.03, 1.03);
+    opacity: 1;
+  }
+
+  80% {
+    transform: scale3d(.97, .97, .97);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+    transform:translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceIn-even {
+  from, 20%, 40%, 60%, 80%, to {
+    animation-timing-function: cubic-bezier(8.000, 2.000, 2.000, 1.000);
+  }
+
+  from {
+    transform:translate3d(2000%, 0, 0);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    transform: scale3d(1.03, 1.03, 1.03);
+    opacity: 1;
+  }
+
+  80% {
+    transform: scale3d(.97, .97, .97);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+    transform:translate3d(0, 0, 0);
+  }
+}

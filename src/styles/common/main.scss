@@ -18,3 +18,124 @@ body{
     position: absolute;
     width: 1px;
 }
+.wrapper{
+}
+.header{
+    position: relative;
+    min-height: 650px;
+    height: 100vh;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.header__bg-block{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+}
+.header__bg{
+    background: url('../images/headerMo.jpg') no-repeat;
+    background-size: cover;
+    height: 1470px;
+    position: absolute;
+    width: 100%;
+    
+}
+.header__nav-block{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+        z-index: 10;
+}
+.header__name-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+        z-index: 11;
+        margin-top: 50px;
+    .name-block{
+        z-index: 11;
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    .autoriz-block-name-block{
+        .autoriz-block-name{
+            color: $white;
+            z-index: 11;
+        }
+        .autoriz-block-personal{
+            color: lighten($color: $gray, $amount: 0%);
+            z-index: 10;
+        }
+    }
+}
+.header__arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px;
+    height: 18px;
+    margin-top: 200px;
+    &:hover{
+        .header__arrow-link{
+            svg{
+                transition: all .7s;
+                transform: translateY(5px);
+                fill: lighten($color: $gray, $amount: 55%);
+            }
+        }
+    }
+}
+.header__arrow-link{
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    svg{
+        width: 100%;
+        height: 100%;
+        fill: lighten($color: $gray, $amount: 35%);
+        z-index: 10;
+    }
+}
+.header__background-svg{
+    top: 15%;
+    width: 1176px;
+    height: 313px;
+    margin-left: -588px;
+        position: absolute;
+    z-index: 10;
+    left: 50%;
+    fill: #fff;
+        svg {
+            width: 100%;
+            height: 100%;
+            fill: lighten($color: $gray, $amount: 45%);
+            opacity: 0.2;
+            z-index: 10;
+        }
+}
+.header__background-color{
+    background-color: lighten($color: #016672, $amount: 0%);;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.header__triangle_about{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    fill: $white;
+    width: 100%;
+}

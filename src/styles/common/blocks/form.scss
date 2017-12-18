@@ -7,7 +7,7 @@
 .form-block__form-icon{
     width: 45px;
     height: 45px;
-    background: lighten($color: $grey, $amount: 57%);
+    background: lighten($color: $gray, $amount: 57%);
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     display: flex;
@@ -16,7 +16,7 @@
     svg{
         width: 16px;
         height: 16px;
-        fill: lighten($color: $grey, $amount: 30%);
+        fill: lighten($color: $gray, $amount: 30%);
     }
 }
 .form-block__input{
@@ -37,7 +37,7 @@
     margin-bottom: 16px;
 }
 .form-block__form-checkbox-name{
-    color: $grey;
+    color: $gray;
 }
 .form-block__form-checkbox{
     position: absolute;
@@ -76,7 +76,7 @@
     justify-content: center;
     align-items: center;
     font-family: $roB;
-    color: $grey;
+    color: $gray;
     margin-bottom: 11px;
 }
 .form-block__radio{
@@ -93,7 +93,7 @@
     margin-right: 18px;
 }
 .form-block__form-radio-name{
-    color: $grey;
+    color: $gray;
 }
 .form-block__form-radio{
     position: absolute;
@@ -112,7 +112,7 @@
     position: relative;
     border-radius: 50%;
     margin-right: 10px;
-    border: 1px solid lighten($color: $grey, $amount: 45%);
+    border: 1px solid lighten($color: $gray, $amount: 45%);
     margin-left: 40px;
     display: flex;
     justify-content: center;

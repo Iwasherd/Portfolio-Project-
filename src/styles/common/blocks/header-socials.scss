@@ -1,0 +1,32 @@
+.header__socials{
+    margin-top: 30px;
+    z-index: 10;
+}
+.header__socials-list{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.header__socials-item{
+    width: 32px;
+    height: 18px;
+    margin-right: 25px;
+    &:hover{
+        .header__socials-link{
+            svg{
+                transition: .7s;
+                fill: $white;
+                
+            }
+        }
+    }
+}
+.header__socials-link{
+    width: 100%;
+    height: 100%;
+    svg{
+        width: 100%;
+        height: 100%;
+        fill: lighten($color: $gray, $amount: 45%);
+    }
+}

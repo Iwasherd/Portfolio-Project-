@@ -1,1 +1,45 @@
 extends ../template
+block title
+    title Обо мне
+block content
+    main.main
+        .about
+            .about__section.about__section_intro
+                .about__wrapper.about__wrapper-intro
+                    .about__intro
+                        h1.about__intro-title Обо мне
+                        .about__intro-img-block(style='background-image:url(styles/images/myPhoto.jpg)')
+                            img.about__intro-img(src="styles/images/myPhoto.jpg", alt="myPhoto2").visuallyhidden
+                        .about__intro-text.about__text
+                            h2.about__text-title Кто я
+                            p.about__text-paragraf Я веб разработчик из Алушты. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                            p.about__text-paragraf Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .about__section.about__section_skills
+                .about__wrapper.about__wrapper-skills
+                    h2.about-skills__title чем я могу быть вам полезен
+                    .about-skills__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                    .about-skills__category
+                        h2.about-skills__category-title Frontend
+                        ul.about-skills__category-list
+                            li.about-skills__category-item
+                            li.about-skills__category-item
+                            li.about-skills__category-item
+                    .about-skills__category
+                        h2.about-skills__category-title Backend
+                        ul.about-skills__category-list
+                            li.about-skills__category-item
+                            li.about-skills__category-item
+                            li.about-skills__category-item
+                            li.about-skills__category-item
+                    .about-skills__category
+                        h2.about-skills__category-title WorkFlow
+                        ul.about-skills__category-list
+                            li.about-skills__category-item
+                            li.about-skills__category-item
+                            li.about-skills__category-item
+
+
+
+
+
+
