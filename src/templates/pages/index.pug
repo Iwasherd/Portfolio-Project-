@@ -2,47 +2,74 @@ extends ../template
 block wrapper
     .wrapper
         .greeting
+            .parallax
+               .parallax__layer
+                    img(src="styles/images/layer1.png", alt="").parallax__img
+               .parallax__layer
+                    img(src="styles/images/layer2.png", alt="").parallax__img
+               .parallax__layer
+                    img(src="styles/images/layer3.png", alt="").parallax__img
+               .parallax__layer
+                    img(src="styles/images/sky1.png", alt="").parallax__img#cloud__three
+               .parallax__layer
+                    img(src="styles/images/layer4.png", alt="").parallax__img
+               .parallax__layer
+                    img(src="styles/images/layer5.png", alt="").parallax__img
+               .parallax__layer
+                    img(src="styles/images/sky2.png", alt="").parallax__img#cloud__two
+               .parallax__layer
+                    img(src="styles/images/layer6.png", alt="").parallax__img
+               .parallax__layer
+                    img(src="styles/images/layer7.png", alt="").parallax__img
+               .parallax__layer
+                    img(src="styles/images/sky3.png", alt="").parallax__img#cloud__one
+
             .greeting__autoriz-btn
                 a.greeting__autoriz-link(href="#") Авторизоваться
-            .greting__autoriz-block.name-block
-                div(style='background-image:url(styles/images/myPhoto.jpg)').autoriz-block-photo-block.circle-photo__block
-                    img.circle-photo__photo(src="styles/images/myPhoto.jpg", alt="myPhoto").visuallyhidden
-                .autoriz-block-name-block
-                    span.autoriz-block-name Иван Исаков
-                    span.autoriz-block-personal Личный сайт веб разработчика
-                .socials
-                    include layouts/mixins
-                    a.socials__link(href="https://vk.com/tvopor" target="_blank" title="моя страница вконтакте")
-                        +icon("icon-vk")         
-                    a.socials__link(href="https://github.com/Iwasherd" target="_blank" title="github")
-                        +icon("icon-github")
-                    a.socials__link(href="#" target="_blank" title="") 
-                        +icon("icon-in")
-                .autoriz-block__btns.block__btns
-                    ul.block__btns-list
-                        li.block__btns-item
-                            a.block__btns-link(href="my-works.html") Мои работы 
-                        li.block__btns-item
-                            a.block__btns-link(href="about.html") Обо мне
-                        li.block__btns-item
-                            a.block__btns-link(href="blog.html") Блог 
 
-                span.autoriz-block__back-title Авторизуйтесь
-                include layouts/form
-                .autoriz-block__back-btns.block__btns
-                    ul.block__btns-list
-                        li.block__btns-item
-                          a.block__btns-link(href="#") На главную 
-                        li.block__btns-item
-                            a.block__btns-link(href="#" form="autoriz") Войти
+            .greeting__flipper
+                .greting__autoriz-block.name-block
+                    div(style='background-image:url(styles/images/myPhoto.jpg)').autoriz-block-photo-block.circle-photo__block
+                        img.circle-photo__photo(src="styles/images/myPhoto.jpg", alt="myPhoto").visuallyhidden
+                    .autoriz-block-name-block
+                        span.autoriz-block-name Иван Исаков
+                        span.autoriz-block-personal Личный сайт веб разработчика
+                    .socials
+                        include layouts/mixins
+                        a.socials__link(href="https://vk.com/tvopor" target="_blank" title="моя страница вконтакте")
+                            +icon("icon-vk")         
+                        a.socials__link(href="https://github.com/Iwasherd" target="_blank" title="github")
+                            +icon("icon-github")
+                        a.socials__link(href="#" target="_blank" title="") 
+                            +icon("icon-in")
+                    .autoriz-block__btns.block__btns
+                        ul.block__btns-list
+                            li.block__btns-item
+                                a.block__btns-link(href="my-works.html") Мои работы 
+                            li.block__btns-item
+                                a.block__btns-link(href="about.html") Обо мне
+                            li.block__btns-item
+                                a.block__btns-link(href="blog.html") Блог 
+                .greting__autoriz-block--back
+                    span.form__title Авторизуйтесь
+                    include layouts/form
+                    .autoriz-block__back-btns.block__btns
+                        ul.block__btns-list
+                            li.block__back-btns-item
+                                a.block__btns-link.block__btns-link--js(href="#") На главную 
+                            li.block__back-btns-item
+                                a.block__btns-link(href="#" form="autoriz") Войти
 
             .greeting__copyright
                 span.greeting__copyright-name &copy; Иван Исаков
                 span.greeting__copyright-make Создано с любовью в LoftSchool
-                span.greeting__copyright-year 2017
+                span.greeting__copyright-year 2018
 
 
 
     
 
 
+block scripts
+    script(src='styles/scripts/index.js' type="text/javascript")
+    script(src='styles/scripts/main.js' type="text/javascript")

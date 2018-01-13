@@ -1,1 +1,95 @@
 extends ../template
+block title
+    title Блог
+block personal
+    h1.title.blog-title Блог
+        .title__img
+            +icon("icon-blog_header")
+    p.title-pargraf Cтатьи, которые я написал
+block arrow
+    .header__arrow.blog-header__arrow
+        include layouts/mixins
+        a(href="next").header__arrow-link
+            +icon('icon-arrow_down')
+block background-svg
+block triangle
+    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 28" preserveAspectRatio="xMidYMin slice").header__triangle.header__triangle_about
+        polygon(points="0,0 0,28 160,28").header__triangle-part.header__triangle-part_left.header__triangle-part_about.header__triangle-part_left_about.header__triangle-part_left_blog
+        polygon(points="320,0 320,28 160,28").header__triangle-part.header__triangle-part_right.header__triangle-part_about.header__triangle-part_right_about.header__triangle-part_left_blog
+block content
+    main.blog-main
+        .articles__list-block
+            ul.articles__list
+                li.articles__item.articles__item_active
+                    a(href="#article1").articles__link Самое важное в SASS
+                li.articles__item
+                    a(href="#article2").articles__link Приемы в верстке, без которых не обходится ни один сайт
+                li.articles__item
+                    a(href="#article3").articles__link Какая-то текст-рыба
+        .mobile-circle            
+        .articles
+            article.article#article1
+                h3.article__title Самое важное в SASS
+                .arcticle__date 11 января 2018
+                .article__text
+                    p.article__paragraf Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+                    p.article__paragraf Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+                    p.article__paragraf
+                        .article__code
+                            ul.code__num-list
+                                li.code__num-item   1
+                                li.code__num-item   2
+                                li.code__num-item   3
+                                li.code__num-item   4
+                                li.code__num-item   5 
+                            .code__content
+                                span.code__comment //присвоить
+                                p.code__paragraf.code__paragraf_first
+                                    span.code__keyword $
+                                    span.code__punctuation (
+                                    span.code__keyword document
+                                    span.code__punctuation ).
+                                    span.code__keyword data
+                                    span.code__punctuation (
+                                    span.code__string 'prop'
+                                    span.code__punctuation ,{
+                                    span.code__keyword anything
+                                    span.code__punctuation :
+                                    span.code__string "любой объект"
+                                    span.code__punctuation })
+                                p.code__paragraf.code__paragraf_second
+                                    span.code__comment //прочитать
+                                span.code__keyword alert
+                                span.code__punctuation (
+                                span.code__keyword $
+                                span.code__punctuation (
+                                span.code__keyword document
+                                span.code__punctuation ).
+                                span.code__keyword data
+                                span.code__punctuation (
+                                span.code__string 'prop'
+                                span.code__punctuation ).
+                                span.code__keyword anything
+                                span.code__punctuation )
+                                span.code__comment  //любой объект        
+            article.article#article2
+                h3.article__title Приемы в верстке, без которых не обходится ни один сайт
+                .arcticle__date 2 января 2018
+                .article__text
+                    p.article__paragraf Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+                    p.article__paragraf Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+
+            article.article#article3
+                h3.article__title Какая-то текст-рыба
+                .arcticle__date 25 декабря 2017
+                    .article__text
+                        p.article__paragraf Каждый веб-разработчик знает, что такое текст-«рыба». Текст этот, несмотря на название, не имеет никакого отношения к обитателям водоемов. Используется он веб-дизайнерами для вставки на интернет-страницы и демонстрации внешнего вида контента, просмотра шрифтов, абзацев, отступов и т.д. Так как цель применения такого текста исключительно демонстрационная, то и смысловую нагрузку ему нести совсем необязательно. Более того, нечитабельность текста сыграет на руку при оценке качества восприятия макета.
+                        p.article__paragraf Самым известным «рыбным» текстом является знаменитый Lorem ipsum. Считается, что впервые его применили в книгопечатании еще в XVI веке. Своим появлением Lorem ipsum обязан древнеримскому философу Цицерону, ведь именно из его трактата «О пределах добра и зла» средневековый книгопечатник вырвал отдельные фразы и слова, получив текст-«рыбу», широко используемый и по сей день. Конечно, возникают некоторые вопросы, связанные с использованием Lorem ipsum на сайтах и проектах, ориентированных на кириллический контент – написание символов на латыни и на кириллице значительно различается.
+                        p.article__paragraf И даже с языками, использующими латинский алфавит, могут возникнуть небольшие проблемы: в различных языках те или иные буквы встречаются с разной частотой, имеется разница в длине наиболее распространенных слов. Отсюда напрашивается вывод, что все же лучше использовать в качестве «рыбы» текст на том языке, который планируется использовать при запуске проекта. Сегодня существует несколько вариантов Lorem ipsum, кроме того, есть специальные генераторы, создающие собственные варианты текста на основе оригинального трактата, благодаря чему появляется возможность получить более длинный неповторяющийся набор слов.
+
+
+
+
+block scripts
+    script(src='styles/scripts/blog.js' type="text/javascript")
+    script(src='styles/scripts/main.js' type="text/javascript")

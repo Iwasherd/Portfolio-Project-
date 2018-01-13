@@ -37,7 +37,7 @@ const paths = {
     },
     js: {
         src: 'src/scripts/*.js',
-        dest: 'build/styles/scripts'
+        dest: 'build/styles/scripts',
     },
     photo: {
         src: 'src/images/photo/*.*',
@@ -63,6 +63,11 @@ function styles() {
         }))
         .pipe(sourcemaps.write())
         .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest(paths.styles.dest))
+        .pipe(autoprefixer({
+            browsers: ['last 16 versions'],
+            cascade: false
+        }))
         .pipe(gulp.dest(paths.styles.dest))
 }
 // watcher
@@ -150,8 +155,7 @@ exports.js = js;
 exports.photo = photo;
 
 gulp.task('default', gulp.series(
-    gulp.parallel(styles, templates),
+    gulp.parallel(styles, templates, prefixer),
     gulp.parallel(minifyimage, fonts, js, photo),
-    gulp.parallel(prefixer),
     gulp.parallel(watch, server)
 ));

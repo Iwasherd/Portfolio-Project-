@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
+  
 }
 .form-block__form-icon{
     width: 45px;
@@ -27,6 +28,13 @@
     border-bottom-right-radius: 5px;
     padding-left: 20px;
     outline-color: $green;
+    @include small-tablet{
+        width: 230px;
+    height: 45px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    }
 }
 .form-block__label-checkbox{
     display: flex;
@@ -40,9 +48,11 @@
     color: $gray;
 }
 .form-block__form-checkbox{
+    transition: none;
     position: absolute;
     top: 0;
-    left: -624.9375rem;
+    left: 0;
+    opacity: 0;
     &:checked+.form-block__form-checkbox-fake::after{
         width: 100%;
         height: 100%;
@@ -96,9 +106,12 @@
     color: $gray;
 }
 .form-block__form-radio{
+      transition: none;
+    transform: rotateY(0deg);
     position: absolute;
     top: 0;
-    left: -9999px;
+    left: 0;
+    opacity: 0;
     &:checked+.form-block__form-radio-fake::after{
         width: 8px;
         height: 8px;

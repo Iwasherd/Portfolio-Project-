@@ -8,6 +8,12 @@ html
         block title
             title Добро пожаловать
     body
+        .preloader
+            svg.preloader__svg(version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="144px" height="144px" viewBox="0 0 144 144" enable-background="new 0 0 144 144" xml:space="preserve" )
+                circle.preloader__circle-one( fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" enable-background="new" cx="72" cy="71.999" r="70")
+                circle.preloader__circle-two( fill="none" stroke="#FFFFFF" stroke-width="3.8938" stroke-miterlimit="10" enable-background="new    " cx="72" cy="72" r="55")
+                circle.preloader__circle-three(fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" cx="72" cy="72" r="40")
+            span.preloader__text 
         block wrapper
             .wrapper
                 header.header
@@ -15,27 +21,70 @@ html
                         .header__bg
                     .header__nav-block
                         include pages/layouts/header-socials
-                        include pages/layouts/hamburger
+                    include pages/layouts/hamburger 
                     .header__name-block
                         .name-block
                             div(style='background-image:url(styles/images/myPhoto.jpg)').autoriz-block-photo-block.circle-photo__block
                                 img.circle-photo__photo(src="styles/images/myPhoto.jpg", alt="myPhoto").visuallyhidden
-                            .autoriz-block-name-block
-                                span.autoriz-block-name Иван Исаков
-                                span.autoriz-block-personal Личный сайт веб разработчика
-                    .header__arrow
-                        include pages/layouts/mixins
-                        a(href="next").header__arrow-link
-                            +icon('icon-arrow_down')
+                            block personal
+                                .autoriz-block-name-block
+                                    span.autoriz-block-name Иван Исаков
+                                    
+                                    span.autoriz-block-personal Личный сайт веб разработчика
+                    block arrow
+                        .header__arrow
+                            include pages/layouts/mixins
+                            a(href="next").header__arrow-link
+                                +icon('icon-arrow_down')
                     block background-svg
-                    .header__background-svg
-                        +icon("icon-portfolio_header")
-                    .header__background-color
-                    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 28" preserveAspectRatio="xMidYMin slice").header__triangle.header__triangle_about
-                        polygon(points="0,0 0,28 160,28").header__triangle-part.header__triangle-part_left.header__triangle-part_about.header__triangle-part_left_about
-                        polygon(points="320,0 320,28 160,28").header__triangle-part.header__triangle-part_right.header__triangle-part_about.header__triangle-part_right_about
-            block content
-                main.main-about
+                        .header__background-svg
+                            +icon("icon-portfolio_header")
+                    .header__background-color 
+                    block triangle
+                        svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 28" preserveAspectRatio="xMidYMin slice").header__triangle.header__triangle_about
+                            polygon(points="0,0 0,28 160,28").header__triangle-part.header__triangle-part_left.header__triangle-part_about.header__triangle-part_left_about
+                            polygon(points="320,0 320,28 160,28").header__triangle-part.header__triangle-part_right.header__triangle-part_about.header__triangle-part_right_about
+                block content
+                    main.main-about
+                block footer
+                    footer.footer
+                        .footer__top
+                            nav.footer__nav
+                                ul.footer__nav-list
+                                    li.footer__nav-item
+                                        a(href="my-works.html").footer__nav-link Мои Работы
+                                    li.footer__nav-item
+                                        a(href="about.html").footer__nav-link Обо мне
+                                    li.footer__nav-item
+                                        a(href="blog.html").footer__nav-link Блог
+                                    li.footer__nav-item
+                                        a(href="index.html").footer__nav-link Авторизация
+                            .footer__socials
+                                ul.footer__socials-list
+                                    li.footer__socials-item
+                                        a(href="#").footer__socials-link
+                                            +icon('icon-vk_round')
+                                    li.footer__socials-item
+                                        a(href="#").footer__socials-link
+                                            +icon('icon-github_round')
+                                    li.footer__socials-item
+                                        a(href="#").footer__socials-link
+                                            +icon('icon-in_round')
+                        .footer__bottom
+                            .footer__text-block
+                                span.footer__text Я веб разработчик из Алушты, и этот сайт я сделал в рамках обучения в школе онлайн образования LoftSchool.
+                            .footer__copyright
+                                span.footer__copyright-name &copy; Иван Исаков
+                                span.footer__copyright-make Создано с любовью в LoftSchool
+                                span.footer__copyright-year 2018
+
+
+
+
+block scripts
+    script(src='styles/scripts/main.js' type="text/javascript")
+    
+    
                 
 
 

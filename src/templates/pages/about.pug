@@ -7,7 +7,9 @@ block content
             .about__section.about__section_intro
                 .about__wrapper.about__wrapper-intro
                     .about__intro
-                        h1.about__intro-title Обо мне
+                        h1.title.about__intro-title Обо мне
+                            .title__img
+                                +icon('icon-about_header')
                         .about__intro-img-block(style='background-image:url(styles/images/myPhoto.jpg)')
                             img.about__intro-img(src="styles/images/myPhoto.jpg", alt="myPhoto2").visuallyhidden
                         .about__intro-text.about__text
@@ -16,27 +18,98 @@ block content
                             p.about__text-paragraf Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
             .about__section.about__section_skills
                 .about__wrapper.about__wrapper-skills
-                    h2.about-skills__title чем я могу быть вам полезен
-                    .about-skills__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                    .subtitle-block
+                        h2.subtitle.about-skills__title чем я могу быть
+                        p.about-skills__title-string вам полезен
+
+                    .about-skills__text-block
+                        p.about-skills__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
                     .about-skills__category
                         h2.about-skills__category-title Frontend
                         ul.about-skills__category-list
-                            li.about-skills__category-item
-                            li.about-skills__category-item
-                            li.about-skills__category-item
+                            li.about-skills__category-item.about-skills__category-item_opacity
+                                svg.circles(viewBox="0 0 110 110")
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second
+                                span.item__title HTML5
+                            li.about-skills__category-item.about-skills__category-item_opacity
+                                svg.circles(viewBox="0 0 110 110")
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second
+                                span.item__title CSS3
+                            li.about-skills__category-item.about-skills__category-item_opacity
+                                svg.circles(viewBox="0 0 110 110")
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second
+                                span.item__title JavaScript &amp; jQuery
                     .about-skills__category
                         h2.about-skills__category-title Backend
                         ul.about-skills__category-list
-                            li.about-skills__category-item
-                            li.about-skills__category-item
-                            li.about-skills__category-item
-                            li.about-skills__category-item
+                            li.about-skills__category-item.about-skills__category-item_opacity
+                                svg.circles(viewBox="0 0 110 110")
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.lighten
+                                span.item__title PHP
+                            li.about-skills__category-item.about-skills__category-item_opacity
+                                svg.circles(viewBox="0 0 110 110")
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.lighten
+                                span.item__title mySQL
+                            li.about-skills__category-item.about-skills__category-item_opacity
+                                svg.circles(viewBox="0 0 110 110")
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.lighten
+                                span.item__title  Node.js &amp; npm
+                            li.about-skills__category-item.about-skills__category-item_opacity
+                                svg.circles(viewBox="0 0 110 110")
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.lighten
+                                span.item__title Mongo.db
                     .about-skills__category
                         h2.about-skills__category-title WorkFlow
                         ul.about-skills__category-list
-                            li.about-skills__category-item
-                            li.about-skills__category-item
-                            li.about-skills__category-item
+                            li.about-skills__category-item.about-skills__category-item_opacity
+                                svg.circles(viewBox="0 0 110 110")
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second
+                                span.item__title Git
+                            li.about-skills__category-item.about-skills__category-item_opacity
+                                svg.circles(viewBox="0 0 110 110")
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second
+                                span.item__title Gulp
+                            li.about-skills__category-item.about-skills__category-item_opacity
+                                svg.circles(viewBox="0 0 110 110")
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.lighten
+                                span.item__title Bower
+                
+        .map-section
+            .map#map
+            .map__address-block
+                address.address
+                    .title.address__title контакты
+                    ul.address__list
+                        li.address__item
+                            a(href="skype:washerd").address__link washerd
+                                +icon('icon-skype ')
+                        li.address__item    
+                            a(href="mail:washerd2008@gmail.com").address__link washerd2008@gmail.com
+                                +icon('icon-envelope')
+                        li.address__item
+                            a(href="tel:79788434707").address__link +7 (978) 843 47 07
+                                +icon('icon-phone')
+                        li.address__item
+                            a(href="https://www.google.com/maps/@44.6841801,34.4045846,15z").address__link г.Алушта, ул Туристов, д29
+                                +icon('icon-map_marker')
+
+block scripts
+    script(src='styles/scripts/main.js' type="text/javascript")
+    script(src='styles/scripts/map.js' type="text/javascript")
+    script(src='styles/scripts/about-scroll.js' type="text/javascript")
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuMCj9vBmookBSaAiGb3SxlP6AQzoxsiQ&callback=initMap" type="text/javascript")
+       
+
 
 
 

@@ -7,82 +7,107 @@
     <title>Добро пожаловать</title>
   </head>
   <body>
+    <div class="preloader">
+      <svg class="preloader__svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="144px" height="144px" viewBox="0 0 144 144" enable-background="new 0 0 144 144" xml:space="preserve">
+        <circle class="preloader__circle-one" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" enable-background="new" cx="72" cy="71.999" r="70"></circle>
+        <circle class="preloader__circle-two" fill="none" stroke="#FFFFFF" stroke-width="3.8938" stroke-miterlimit="10" enable-background="new    " cx="72" cy="72" r="55"></circle>
+        <circle class="preloader__circle-three" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" cx="72" cy="72" r="40"></circle>
+      </svg><span class="preloader__text"> </span>
+    </div>
     <div class="wrapper">
       <div class="greeting">
+        <div class="parallax">
+          <div class="parallax__layer"><img class="parallax__img" src="styles/images/layer1.png" alt=""></div>
+          <div class="parallax__layer"><img class="parallax__img" src="styles/images/layer2.png" alt=""></div>
+          <div class="parallax__layer"><img class="parallax__img" src="styles/images/layer3.png" alt=""></div>
+          <div class="parallax__layer"><img class="parallax__img" src="styles/images/sky1.png" alt="" id="cloud__three"></div>
+          <div class="parallax__layer"><img class="parallax__img" src="styles/images/layer4.png" alt=""></div>
+          <div class="parallax__layer"><img class="parallax__img" src="styles/images/layer5.png" alt=""></div>
+          <div class="parallax__layer"><img class="parallax__img" src="styles/images/sky2.png" alt="" id="cloud__two"></div>
+          <div class="parallax__layer"><img class="parallax__img" src="styles/images/layer6.png" alt=""></div>
+          <div class="parallax__layer"><img class="parallax__img" src="styles/images/layer7.png" alt=""></div>
+          <div class="parallax__layer"><img class="parallax__img" src="styles/images/sky3.png" alt="" id="cloud__one"></div>
+        </div>
         <div class="greeting__autoriz-btn"><a class="greeting__autoriz-link" href="#">Авторизоваться</a></div>
-        <div class="greting__autoriz-block name-block">
-          <div class="autoriz-block-photo-block circle-photo__block" style="background-image:url(styles/images/myPhoto.jpg);"><img class="circle-photo__photo visuallyhidden" src="styles/images/myPhoto.jpg" alt="myPhoto"></div>
-          <div class="autoriz-block-name-block"><span class="autoriz-block-name">Иван Исаков</span><span class="autoriz-block-personal">Личный сайт веб разработчика</span></div>
-          <div class="socials"><a class="socials__link" href="https://vk.com/tvopor" target="_blank" title="моя страница вконтакте">
-                          <svg class="icon icon-icon-vk">
-                            <use xlink:href="styles/images/icons/sprite.svg#icon-vk"></use>
-                          </svg></a><a class="socials__link" href="https://github.com/Iwasherd" target="_blank" title="github">
-                          <svg class="icon icon-icon-github">
-                            <use xlink:href="styles/images/icons/sprite.svg#icon-github"></use>
-                          </svg></a><a class="socials__link" href="#" target="_blank" title=""> 
-                          <svg class="icon icon-icon-in">
-                            <use xlink:href="styles/images/icons/sprite.svg#icon-in"></use>
-                          </svg></a>
+        <div class="greeting__flipper">
+          <div class="greting__autoriz-block name-block">
+            <div class="autoriz-block-photo-block circle-photo__block" style="background-image:url(styles/images/myPhoto.jpg);"><img class="circle-photo__photo visuallyhidden" src="styles/images/myPhoto.jpg" alt="myPhoto"></div>
+            <div class="autoriz-block-name-block"><span class="autoriz-block-name">Иван Исаков</span><span class="autoriz-block-personal">Личный сайт веб разработчика</span></div>
+            <div class="socials"><a class="socials__link" href="https://vk.com/tvopor" target="_blank" title="моя страница вконтакте">
+                              <svg class="icon icon-icon-vk">
+                                <use xlink:href="styles/images/icons/sprite.svg#icon-vk"></use>
+                              </svg></a><a class="socials__link" href="https://github.com/Iwasherd" target="_blank" title="github">
+                              <svg class="icon icon-icon-github">
+                                <use xlink:href="styles/images/icons/sprite.svg#icon-github"></use>
+                              </svg></a><a class="socials__link" href="#" target="_blank" title=""> 
+                              <svg class="icon icon-icon-in">
+                                <use xlink:href="styles/images/icons/sprite.svg#icon-in"></use>
+                              </svg></a>
+            </div>
+            <div class="autoriz-block__btns block__btns">
+              <ul class="block__btns-list">
+                <li class="block__btns-item"><a class="block__btns-link" href="my-works.html">Мои работы </a></li>
+                <li class="block__btns-item"><a class="block__btns-link" href="about.html">Обо мне</a></li>
+                <li class="block__btns-item"><a class="block__btns-link" href="blog.html">Блог </a></li>
+              </ul>
+            </div>
           </div>
-          <div class="autoriz-block__btns block__btns">
-            <ul class="block__btns-list">
-              <li class="block__btns-item"><a class="block__btns-link" href="my-works.html">Мои работы </a></li>
-              <li class="block__btns-item"><a class="block__btns-link" href="about.html">Обо мне</a></li>
-              <li class="block__btns-item"><a class="block__btns-link" href="blog.html">Блог </a></li>
-            </ul>
-          </div><span class="autoriz-block__back-title">Авторизуйтесь</span>
-          <form class="form" action="" id="autoriz">
-            <div class="form-block">
-              <div class="form-block__row">
-                <label class="form-block__label" for="login">
-                  <div class="form-block__form-icon">
-                                <svg class="icon icon-icon-login">
-                                  <use xlink:href="styles/images/icons/sprite.svg#icon-login"></use>
-                                </svg>
-                  </div>
-                  <input class="form-block__input" type="text" name="login" placeholder="Логин" id="login">
-                </label>
-                <label class="form-block__label" for="password">
-                  <div class="form-block__form-icon">
-                                <svg class="icon icon-icon-password">
-                                  <use xlink:href="styles/images/icons/sprite.svg#icon-password"></use>
-                                </svg>
-                  </div>
-                  <input class="form-block__input" type="password" name="password" placeholder="Пароль" id="password">
-                </label>
-              </div>
-              <div class="form-block__row">   
-                <label class="form-block__label-checkbox" for="checkboxHuman">
-                  <div class="form-block__form-checkbox-name">Я человек</div>
-                  <input class="form-block__form-checkbox" type="checkbox" name="checkboxRobot" id="checkboxHuman">
-                  <div class="form-block__form-checkbox-fake"></div>
-                </label>
-              </div>
-              <div class="form-block__row"><span class="form-block__form-radio-title">Вы точно не робот?</span>
-                <div class="form-block__radio">
-                  <label class="form-block__label-radio" for="radioYes">
-                    <div class="form-block__form-radio-name">Да </div>
-                    <input class="form-block__form-radio" type="radio" name="robot" id="radioYes">
-                    <div class="form-block__form-radio-fake">           </div>
+          <div class="greting__autoriz-block--back"><span class="form__title">Авторизуйтесь</span>
+            <form class="form" action="" id="autoriz">
+              <div class="form-block">
+                <div class="form-block__row">
+                  <label class="form-block__label" for="login">
+                    <div class="form-block__form-icon">
+                                    <svg class="icon icon-icon-login">
+                                      <use xlink:href="styles/images/icons/sprite.svg#icon-login"></use>
+                                    </svg>
+                    </div>
+                    <input class="form-block__input" type="text" name="login" placeholder="Логин" id="login">
                   </label>
-                  <label class="form-block__label-radio" for="radioNot">
-                    <div class="form-block__form-radio-name">Не уверен</div>
-                    <input class="form-block__form-radio" type="radio" name="robot" id="radioNot">
-                    <div class="form-block__form-radio-fake"></div>
+                  <label class="form-block__label" for="password">
+                    <div class="form-block__form-icon">
+                                    <svg class="icon icon-icon-password">
+                                      <use xlink:href="styles/images/icons/sprite.svg#icon-password"></use>
+                                    </svg>
+                    </div>
+                    <input class="form-block__input" type="password" name="password" placeholder="Пароль" id="password">
                   </label>
                 </div>
+                <div class="form-block__row">   
+                  <label class="form-block__label-checkbox" for="checkboxHuman">
+                    <div class="form-block__form-checkbox-name">Я человек</div>
+                    <input class="form-block__form-checkbox" type="checkbox" name="checkboxRobot" id="checkboxHuman">
+                    <div class="form-block__form-checkbox-fake"></div>
+                  </label>
+                </div>
+                <div class="form-block__row"><span class="form-block__form-radio-title">Вы точно не робот?</span>
+                  <div class="form-block__radio">
+                    <label class="form-block__label-radio" for="radioYes">
+                      <div class="form-block__form-radio-name">Да </div>
+                      <input class="form-block__form-radio" type="radio" name="robot" id="radioYes">
+                      <div class="form-block__form-radio-fake">           </div>
+                    </label>
+                    <label class="form-block__label-radio" for="radioNot">
+                      <div class="form-block__form-radio-name">Не уверен</div>
+                      <input class="form-block__form-radio" type="radio" name="robot" id="radioNot">
+                      <div class="form-block__form-radio-fake"></div>
+                    </label>
+                  </div>
+                </div>
               </div>
+            </form>
+            <div class="autoriz-block__back-btns block__btns">
+              <ul class="block__btns-list">
+                <li class="block__back-btns-item"><a class="block__btns-link block__btns-link--js" href="#">На главную </a></li>
+                <li class="block__back-btns-item"><a class="block__btns-link" href="#" form="autoriz">Войти</a></li>
+              </ul>
             </div>
-          </form>
-          <div class="autoriz-block__back-btns block__btns">
-            <ul class="block__btns-list">
-              <li class="block__btns-item"><a class="block__btns-link" href="#">На главную </a></li>
-              <li class="block__btns-item"><a class="block__btns-link" href="#" form="autoriz">Войти</a></li>
-            </ul>
           </div>
         </div>
-        <div class="greeting__copyright"><span class="greeting__copyright-name">&copy; Иван Исаков</span><span class="greeting__copyright-make">Создано с любовью в LoftSchool</span><span class="greeting__copyright-year">2017</span></div>
+        <div class="greeting__copyright"><span class="greeting__copyright-name">&copy; Иван Исаков</span><span class="greeting__copyright-make">Создано с любовью в LoftSchool</span><span class="greeting__copyright-year">2018</span></div>
       </div>
     </div>
   </body>
 </html>
+<script src="styles/scripts/index.js" type="text/javascript"></script>
+<script src="styles/scripts/main.js" type="text/javascript"></script>

@@ -4,9 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
     <link rel="stylesheet" href="styles/css/app.min.css">
-    <title>Добро пожаловать</title>
+    <title>Мои работы</title>
   </head>
   <body>
+    <div class="preloader">
+      <svg class="preloader__svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="144px" height="144px" viewBox="0 0 144 144" enable-background="new 0 0 144 144" xml:space="preserve">
+        <circle class="preloader__circle-one" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" enable-background="new" cx="72" cy="71.999" r="70"></circle>
+        <circle class="preloader__circle-two" fill="none" stroke="#FFFFFF" stroke-width="3.8938" stroke-miterlimit="10" enable-background="new    " cx="72" cy="72" r="55"></circle>
+        <circle class="preloader__circle-three" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" cx="72" cy="72" r="40"></circle>
+      </svg><span class="preloader__text"> </span>
+    </div>
     <div class="wrapper">
       <header class="header">
         <div class="header__bg-block">
@@ -29,23 +36,23 @@
                               </svg></a></li>
             </ul>
           </div>
-          <div class="fullscreen-menu">
-            <div class="fullscreen-menu__left"></div>
-            <div class="fullscreen-menu__right"></div>
-            <div class="fullscreen-menu__nav">
-              <ul class="fullscreen-menu__nav-list">
-                <li class="fullscreen-menu__nav-item"><a class="fullscreen-menu__nav-link" href="my-works.html">Мои работы </a></li>
-                <li class="fullscreen-menu__nav-item"><a class="fullscreen-menu__nav-link" href="blog.html">Блог </a></li>
-                <li class="fullscreen-menu__nav-item"><a class="fullscreen-menu__nav-link" href="about.html">Обо мне</a></li>
-                <li class="fullscreen-menu__nav-item"><a class="fullscreen-menu__nav-link" href="index.html">Авторизация  </a></li>
-              </ul>
-            </div>
+        </div>
+        <div class="fullscreen-menu">
+          <div class="fullscreen-menu__left"></div>
+          <div class="fullscreen-menu__right"></div>
+          <div class="fullscreen-menu__nav">
+            <ul class="fullscreen-menu__nav-list">
+              <li class="fullscreen-menu__nav-item"><a class="fullscreen-menu__nav-link" href="my-works.html">Мои работы </a></li>
+              <li class="fullscreen-menu__nav-item"><a class="fullscreen-menu__nav-link" href="blog.html">Блог </a></li>
+              <li class="fullscreen-menu__nav-item"><a class="fullscreen-menu__nav-link" href="about.html">Обо мне</a></li>
+              <li class="fullscreen-menu__nav-item"><a class="fullscreen-menu__nav-link" href="index.html">Авторизация </a></li>
+            </ul>
           </div>
-          <div class="hamburger">
-            <div class="hamburger__line"></div>
-            <div class="hamburger__line"></div>
-            <div class="hamburger__line"></div>
-          </div>
+        </div>
+        <div class="hamburger">
+          <div class="hamburger__line"></div>
+          <div class="hamburger__line"></div>
+          <div class="hamburger__line"></div>
         </div>
         <div class="header__name-block">
           <div class="name-block">
@@ -63,13 +70,158 @@
                       <use xlink:href="styles/images/icons/sprite.svg#icon-portfolio_header"></use>
                     </svg>
         </div>
-        <div class="header__background-color"></div>
+        <div class="header__background-color"> </div>
         <svg class="header__triangle header__triangle_about" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 28" preserveAspectRatio="xMidYMin slice">
-          <polygon class="header__triangle-part header__triangle-part_left header__triangle-part_about header__triangle-part_left_about" points="0,0 0,28 160,28"></polygon>
-          <polygon class="header__triangle-part header__triangle-part_right header__triangle-part_about header__triangle-part_right_about" points="320,0 320,28 160,28"></polygon>
+          <polygon class="header__triangle-part header__triangle-part_left header__triangle-part_about header__triangle-part_left_about header__triangle-part_work" points="0,0 0,28 160,28"></polygon>
+          <polygon class="header__triangle-part header__triangle-part_right header__triangle-part_about header__triangle-part_right_about header__triangle-part_work" points="320,0 320,28 160,28"></polygon>
         </svg>
       </header>
+      <main class="works">
+        <div class="title-block">
+          <h1 class="title works__title">мои работы
+            <div class="title__img"> 
+                        <svg class="icon icon-icon-works_header">
+                          <use xlink:href="styles/images/icons/sprite.svg#icon-works_header"></use>
+                        </svg>
+            </div>
+          </h1>
+        </div>
+        <div class="content__works" id="slider">
+          <div class="content__works-left">
+            <div class="school__title">
+              <h2 class="school__title-text title">{{ currentProject.title || 'Название' }}</h2>
+            </div>
+            <h3 class="school__tech">{{ currentProject.tech || 'Технологии' }}</h3><a class="school__link" :href="currentProject.href">
+                        <svg class="icon icon-icon-link">
+                          <use xlink:href="styles/images/icons/sprite.svg#icon-link"></use>
+                        </svg><span class="school__link-text">{{ currentProject.linkText || 'Перейти' }}</span></a>
+          </div>
+          <div class="content__works-right content__works-right-current">
+            <transition name="fade" v-on:after-leave="afterLeaveCurrent">
+              <div class="work__current" v-if="showCurrent"><img class="work__current-img" :src="currentProject.img" alt="currentProject"></div>
+            </transition>
+          </div>
+          <div class="work__another">
+            <div class="work__view" @click="nextproject">
+              <transition name="slideUp" v-on:after-leave="afterLeaveNext">
+                <div class="work__view-images" v-if="showNext"><img class="work__view-img" :src="nextProject.img" alt="nextProject"><img class="work__view-img--next" :src="nextProject2.img" alt="nextProject2"></div>
+              </transition>
+              <div class="work__view-overlay">
+                          <svg class="icon icon-icon-portf_arrow_up">
+                            <use xlink:href="styles/images/icons/sprite.svg#icon-portf_arrow_up"></use>
+                          </svg>
+              </div>
+            </div>
+            <div class="work__view" @click="previousproject">
+              <transition name="slideDown" v-on:after-leave="afterLeavePrevious">
+                <div class="work__view-images" v-if="showPrevious"><img class="work__view-img" :src="previousProject.img" alt="previousProject"><img class="work__view-img--previous" :src="previousProject2.img" alt="previousProject2"></div>
+              </transition>
+              <div class="work__view-overlay">
+                          <svg class="icon icon-icon-arrow_down ">
+                            <use xlink:href="styles/images/icons/sprite.svg#icon-arrow_down "></use>
+                          </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="review-section">
+          <div class="review__bg">
+            <h1 class="title rewiew__title">что обо мне 
+              <div class="title__img">
+                          <svg class="icon icon-icon-about_header">
+                            <use xlink:href="styles/images/icons/sprite.svg#icon-about_header"></use>
+                          </svg>
+              </div>
+            </h1>
+            <p class="title-paragraf">говорят
+              <div class="review-block">
+                <ul class="review__list">
+                  <li class="review__item">
+                    <div class="review__icon"><img src="styles/images/comma.png" alt=""></div><span class="review__text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</span>
+                    <div class="review__info-block">
+                      <div class="review__photo-box" style="background-image:url(styles/images/myPhoto.jpg);"><img class="review__photo visuallyhidden" src="styles/images/myPhoto.jpg" alt=""></div>
+                      <div class="review__name-block"><span class="review__name">Ковальчук Дмитрий</span><span class="review__desc">основатель LoftSchool</span></div>
+                    </div>
+                  </li>
+                  <li class="review__item">
+                    <div class="review__icon"><img src="styles/images/comma.png" alt=""></div>
+                    <div class="review__text">Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!</div>
+                    <div class="review__info-block">
+                      <div class="review__photo-box" style="background-image:url(styles/images/myPhoto.jpg);"><img class="review__photo visuallyhidden" src="styles/images/myPhoto.jpg" alt=""></div>
+                      <div class="review__name-block"><span class="review__name">Сабанцев Владимир</span><span class="review__desc">преподаватель</span></div>
+                    </div>
+                  </li>
+                </ul>
+                <form class="form review__form" action="">
+                  <div class="form-block">
+                    <div class="form-blur"></div><span class="form__title">Связаться со мной</span>
+                    <div class="form-block__row">
+                      <label class="form-block__label" for="name">
+                        <input class="form-block__input" type="text" name="name" placeholder="Имя" id="name">
+                      </label>
+                    </div>
+                    <div class="form-block__row">
+                      <label class="form-block__label" for="mail">
+                        <input class="form-block__input" type="text" name="mail" placeholder="Email" id="mail">
+                      </label>
+                    </div>
+                    <div class="form-block__row">   
+                      <label class="form-block__label" for="">
+                        <textarea class="form-block__textarea" name="message" placeholder="Ваше сообщение" id="textarea"></textarea>
+                      </label>
+                    </div>
+                    <div class="block__btns">
+                      <ul class="block__btns-list">
+                        <li class="block__back-btns-item"><a class="block__btns-link block__btns-link--js" href="#">Отправить </a></li>
+                        <li class="block__back-btns-item"><a class="block__btns-link block__btns--reset" href="#">Очистить</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </form>
+                <div class="work__arrow arrow-to-top"><a class="arrow-to-top__link" href="#">
+                              <svg class="icon icon-icon-portf_arrow_up">
+                                <use xlink:href="styles/images/icons/sprite.svg#icon-portf_arrow_up"></use>
+                              </svg></a></div>
+              </div>
+            </p>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer__top">
+          <nav class="footer__nav">
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item"><a class="footer__nav-link" href="my-works.html">Мои Работы</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="about.html">Обо мне</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="blog.html">Блог</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="index.html">Авторизация</a></li>
+            </ul>
+          </nav>
+          <div class="footer__socials">
+            <ul class="footer__socials-list">
+              <li class="footer__socials-item"><a class="footer__socials-link" href="#">
+                            <svg class="icon icon-icon-vk_round">
+                              <use xlink:href="styles/images/icons/sprite.svg#icon-vk_round"></use>
+                            </svg></a></li>
+              <li class="footer__socials-item"><a class="footer__socials-link" href="#">
+                            <svg class="icon icon-icon-github_round">
+                              <use xlink:href="styles/images/icons/sprite.svg#icon-github_round"></use>
+                            </svg></a></li>
+              <li class="footer__socials-item"><a class="footer__socials-link" href="#">
+                            <svg class="icon icon-icon-in_round">
+                              <use xlink:href="styles/images/icons/sprite.svg#icon-in_round"></use>
+                            </svg></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__text-block"><span class="footer__text">Я веб разработчик из Алушты, и этот сайт я сделал в рамках обучения в школе онлайн образования LoftSchool.</span></div>
+          <div class="footer__copyright"><span class="footer__copyright-name">&copy; Иван Исаков</span><span class="footer__copyright-make">Создано с любовью в LoftSchool</span><span class="footer__copyright-year">2018</span></div>
+        </div>
+      </footer>
     </div>
-    <main class="main-about"></main>
   </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="styles/scripts/works.js" type="text/javascript"></script>
+<script src="styles/scripts/main.js" type="text/javascript"></script>

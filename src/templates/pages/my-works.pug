@@ -1,1 +1,100 @@
 extends ../template
+block title
+    title Мои работы
+block triangle
+    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 28" preserveAspectRatio="xMidYMin slice").header__triangle.header__triangle_about
+        polygon(points="0,0 0,28 160,28").header__triangle-part.header__triangle-part_left.header__triangle-part_about.header__triangle-part_left_about.header__triangle-part_work
+        polygon(points="320,0 320,28 160,28").header__triangle-part.header__triangle-part_right.header__triangle-part_about.header__triangle-part_right_about.header__triangle-part_work
+block content
+    main.works
+        .title-block
+            h1.title.works__title мои работы
+                .title__img 
+                    +icon('icon-works_header')
+        .content__works#slider
+            .content__works-left
+                .school__title
+                    h2.school__title-text.title {{ currentProject.title || 'Название' }}
+                h3.school__tech {{ currentProject.tech || 'Технологии' }}
+                a.school__link(:href='currentProject.href')
+                    +icon('icon-link')
+                    span.school__link-text {{ currentProject.linkText || 'Перейти' }}
+            .content__works-right.content__works-right-current
+                transition(name='fade' v-on:after-leave="afterLeaveCurrent")
+                    .work__current(v-if='showCurrent')
+                        img( :src="currentProject.img", alt="currentProject" class="work__current-img")
+            .work__another
+                .work__view(@click='nextproject')
+                    transition(name='slideUp' v-on:after-leave="afterLeaveNext")
+                        .work__view-images(v-if='showNext')
+                            img(:src="nextProject.img", alt="nextProject" class="work__view-img")
+                            img(:src="nextProject2.img", alt="nextProject2" class="work__view-img--next")
+                    .work__view-overlay
+                        +icon('icon-portf_arrow_up')
+                .work__view(@click='previousproject')
+                    transition(name='slideDown' v-on:after-leave="afterLeavePrevious")
+                        .work__view-images(v-if='showPrevious')
+                            img(:src="previousProject.img", alt="previousProject" class="work__view-img")
+                            img(:src="previousProject2.img", alt="previousProject2" class="work__view-img--previous")
+                    .work__view-overlay
+                        +icon('icon-arrow_down ')
+                
+        .review-section
+            .review__bg
+                h1.title.rewiew__title что обо мне 
+                    .title__img
+                        +icon('icon-about_header')
+                p.title-paragraf говорят
+                    .review-block
+                        ul.review__list
+                            li.review__item
+                                .review__icon
+                                    img(src="styles/images/comma.png", alt="")
+                                span.review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                                .review__info-block
+                                    .review__photo-box(style='background-image:url(styles/images/myPhoto.jpg)')
+                                        img(src="styles/images/myPhoto.jpg", alt="").review__photo.visuallyhidden
+                                    .review__name-block
+                                        span.review__name Ковальчук Дмитрий
+                                        span.review__desc основатель LoftSchool
+                            li.review__item
+                                .review__icon
+                                    img(src="styles/images/comma.png", alt="")
+                                .review__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
+                                .review__info-block
+                                    .review__photo-box(style='background-image:url(styles/images/myPhoto.jpg)')
+                                        img(src="styles/images/myPhoto.jpg", alt="").review__photo.visuallyhidden
+                                    .review__name-block
+                                        span.review__name Сабанцев Владимир
+                                        span.review__desc преподаватель
+                        form.form(action="").review__form
+                            .form-block
+                                .form-blur
+                                span.form__title Связаться со мной
+                                .form-block__row
+                                    label.form-block__label(for="name")
+                                        input.form-block__input(type="text" name="name" placeholder="Имя")#name
+                                .form-block__row
+                                    label.form-block__label(for="mail")
+                                        input.form-block__input(type="text" name="mail" placeholder="Email")#mail
+                                .form-block__row    
+                                    label.form-block__label(for="")
+                                        textarea.form-block__textarea( name="message" placeholder="Ваше сообщение")#textarea
+                                .block__btns
+                                    ul.block__btns-list
+                                        li.block__back-btns-item
+                                            a.block__btns-link.block__btns-link--js(href="#") Отправить 
+                                        li.block__back-btns-item
+                                            a(href="#").block__btns-link.block__btns--reset Очистить
+                                                
+                        .work__arrow.arrow-to-top
+                            a(href="#").arrow-to-top__link
+                                +icon("icon-portf_arrow_up")
+
+
+
+
+block scripts
+    script(src='https://cdn.jsdelivr.net/npm/vue')
+    script(src='styles/scripts/works.js' type="text/javascript")
+    script(src='styles/scripts/main.js' type="text/javascript")
