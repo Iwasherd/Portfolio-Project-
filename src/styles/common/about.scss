@@ -87,16 +87,16 @@
 .about__intro-img-block{
     width: 443px;
     height: 390px;
-    background-position-y: -36px;
+    background-position-x: 70%;
     background-size: cover;
     background-repeat: no-repeat;
-    @include mobile {
-        width: 280px;
-    background-position-x: -42px;
-    }
      @include big-tablet{
         width: 330px;
     }
+    @include mobile {
+        width: 280px;
+    }
+    
 }
 .about__intro-text{
     display: flex;
@@ -104,12 +104,13 @@
     align-items: center;
     flex-direction: column;
     width: 440px;
-    @include mobile {
-        width: 280px;
-    }
     @include big-tablet{
         width: 330px;
     }
+    @include mobile {
+        width: 280px;
+    }
+    
 }
 .about__text-title{
     font-family: $bernierR;

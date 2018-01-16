@@ -16,7 +16,7 @@ block content
                 .school__title
                     h2.school__title-text.title {{ currentProject.title || 'Название' }}
                 h3.school__tech {{ currentProject.tech || 'Технологии' }}
-                a.school__link(:href='currentProject.href')
+                a.school__link(:href='currentProject.href' target='_blank')
                     +icon('icon-link')
                     span.school__link-text {{ currentProject.linkText || 'Перейти' }}
             .content__works-right.content__works-right-current
@@ -73,17 +73,17 @@ block content
                                 span.form__title Связаться со мной
                                 .form-block__row
                                     label.form-block__label(for="name")
-                                        input.form-block__input(type="text" name="name" placeholder="Имя")#name
+                                        input.form-block__input(type="text" name="name" placeholder="Имя" required)#name
                                 .form-block__row
                                     label.form-block__label(for="mail")
-                                        input.form-block__input(type="text" name="mail" placeholder="Email")#mail
+                                        input.form-block__input(type="text" name="mail" placeholder="Email" required)#mail
                                 .form-block__row    
                                     label.form-block__label(for="")
                                         textarea.form-block__textarea( name="message" placeholder="Ваше сообщение")#textarea
                                 .block__btns
                                     ul.block__btns-list
                                         li.block__back-btns-item
-                                            a.block__btns-link.block__btns-link--js(href="#") Отправить 
+                                            input(type="submit").block__btns-link.block__btns-link--js
                                         li.block__back-btns-item
                                             a(href="#").block__btns-link.block__btns--reset Очистить
                                                 

@@ -37,16 +37,16 @@
               img: "styles/images/1.png"
             },
             {
-              title: "Статичный сайт",
-              tech: "HTML, CSS",
-              href: "#",
+              title: "Лэндинг",
+              tech: "HTML, CSS, jQuery",
+              href: "https://iwasherd.github.io/MrBurger/",
               linkText: "Посмотреть сайт",
               img: "styles/images/2.png"
             },
             {
-              title: "Лэндинг",
-              tech: "HTML, CSS, Javascript, jQuery",
-              href: "#",
+              title: "статичный сайт",
+              tech: "HTML, CSS",
+              href: "https://iwasherd.github.io/Fitness/",
               linkText: "Посмотреть сайт",
               img: "styles/images/3.png"
             }

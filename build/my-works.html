@@ -91,7 +91,7 @@
             <div class="school__title">
               <h2 class="school__title-text title">{{ currentProject.title || 'Название' }}</h2>
             </div>
-            <h3 class="school__tech">{{ currentProject.tech || 'Технологии' }}</h3><a class="school__link" :href="currentProject.href">
+            <h3 class="school__tech">{{ currentProject.tech || 'Технологии' }}</h3><a class="school__link" :href="currentProject.href" target="_blank">
                         <svg class="icon icon-icon-link">
                           <use xlink:href="styles/images/icons/sprite.svg#icon-link"></use>
                         </svg><span class="school__link-text">{{ currentProject.linkText || 'Перейти' }}</span></a>
@@ -157,12 +157,12 @@
                     <div class="form-blur"></div><span class="form__title">Связаться со мной</span>
                     <div class="form-block__row">
                       <label class="form-block__label" for="name">
-                        <input class="form-block__input" type="text" name="name" placeholder="Имя" id="name">
+                        <input class="form-block__input" type="text" name="name" placeholder="Имя" required id="name">
                       </label>
                     </div>
                     <div class="form-block__row">
                       <label class="form-block__label" for="mail">
-                        <input class="form-block__input" type="text" name="mail" placeholder="Email" id="mail">
+                        <input class="form-block__input" type="text" name="mail" placeholder="Email" required id="mail">
                       </label>
                     </div>
                     <div class="form-block__row">   
@@ -172,7 +172,9 @@
                     </div>
                     <div class="block__btns">
                       <ul class="block__btns-list">
-                        <li class="block__back-btns-item"><a class="block__btns-link block__btns-link--js" href="#">Отправить </a></li>
+                        <li class="block__back-btns-item">
+                          <input class="block__btns-link block__btns-link--js" type="submit">
+                        </li>
                         <li class="block__back-btns-item"><a class="block__btns-link block__btns--reset" href="#">Очистить</a></li>
                       </ul>
                     </div>

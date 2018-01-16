@@ -204,7 +204,7 @@
         &-img{
             opacity: 1;
             height: 80%;
-            width: 100%;
+            width: 80%;
             @include tablet{
                 height: 100%;
             }
@@ -252,18 +252,18 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 100%;
+            width: 70%;
             &--next{
                 position: absolute;
 
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                width: 100%;
+                width: 70%;
                     top: 200%;
                 .work__view-img{
                 top: 200%;
-                width: 100%;
+                width: 70%;
                 }
             }
             &--previous{
@@ -273,10 +273,10 @@
                     -ms-transform: translate(-50%, -50%);
                     transform: translate(-50%, -50%);
                     top: -100%;
-                    width: 100%;
+                    width: 70%;
                 .work__view-img{
                 top: -100%;
-                width: 100%;
+                width: 70%;
                 }
             }
         }
@@ -503,8 +503,9 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-        background-position-y: -39px;
-    background-position-x: -80px;
+            background-position-y: -226px;
+    background-position-x: -82px;
+    background-size: cover;
 }
 .review__name-block{
     display: flex;
